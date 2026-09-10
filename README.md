@@ -43,6 +43,7 @@ Este projeto consiste no desenvolvimento de um pipeline de **ETL (Extract, Trans
 
 **Limitações Remanescentes:** A base original não possui colunas de preços unitários ou faturamento monetário (R$), limitando a análise exploratória ao volume físico de itens e frequência de compras.
 
+---
 ## 5. Dificuldades Encontradas 
 
 - O processo de estruturação do código e preparação do pipeline de dados passou por desafios técnicos em limpeza de dados, visualização e requisitos do repositório:
@@ -69,3 +70,30 @@ Este projeto consiste no desenvolvimento de um pipeline de **ETL (Extract, Trans
 
 - Caminhos de Arquivo no Google Drive: Gerenciamento do caminho do diretório com espaços no Google Colab (/Colab Notebooks/Analise de Dados /).
 
+---
+## 6. Motivo pelo qual se usou maplotlib e seaborn nos graficos 
+
+No projeto, **Matplotlib e Seaborn** foram utilizados de forma complementar: o Matplotlib atuou na estruturação e customização fina da imagem, enquanto o Seaborn foi escolhido pela facilidade na geração de gráficos estatísticos e acabamento visual.
+
+**Matplotlib: Arquitetura e Controle de Layout**
+
+**Gerenciamento de Subplots:** Utilizado para construir a grade $2 \times 2$ (fig, axs = plt.subplots(2, 2)), permitindo posicionar quatro análises distintas em uma única imagem composta.
+
+**Customização de Títulos e Eixos:** Empregado no ajuste de rótulos dos eixos (set_xlabel, set_ylabel), títulos individuais de cada gráfico e no título geral do painel (fig.suptitle).
+
+**Exportação do Arquivo:** Responsável por salvar o painel final em imagem (plt.savefig) com alta resolução ($300\text{ DPI}$) e ajuste de bordas (bbox_inches="tight").
+
+
+**Seaborn: Abstração Estatística e Estética**
+
+Integração Direta com Pandas: Permite passar o DataFrame e nomear colunas nos eixos x e y sem a necessidade de iterar ou formatar listas manualmente.
+
+Padronização Visual por Padrão: O uso de sns.set_theme() aplica grades de fundo e paletas de cores acessíveis (Blues_r, Greens_d, Set2), garantindo legibilidade imediata.
+
+**Mapeamento Específico por Tipo de Dado:**
+
+**sns.lineplot:** Conecta os pontos ordenados no tempo para exibir a tendência temporal das vendas.
+
+**sns.barplot:** Compara grandezas entre categorias distintas (PR_CAT e gênero do cliente) ordenando as barras por volume.
+
+**sns.countplot:** Resume a contagem de frequência da variável discreta CL_FHL (número de filhos) em um único comando.
