@@ -16,9 +16,13 @@ Este projeto consiste no desenvolvimento de um pipeline de **ETL (Extract, Trans
 
 
 ├── Base Varejo.csv                    # "/content/drive/MyDrive/Colab Notebooks/Analise de Dados /Base Varejo.csv"
+
 ├── Varejocsv_tratado.csv              # "/content/drive/MyDrive/Colab Notebooks/Analise de Dados /Varejocsv_tratado.csv"
+
 ├── Miniprojeto_Analise_Varejo.ipynb   # Notebook com código comentado e em execução
+
 ├── painel_visualizacao_varejo.png     # Painel de gráficos exportado via Seaborn
+
 └── README.md                          # Documentação e reflexão teórica do projeto
 
 ---
